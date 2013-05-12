@@ -1,5 +1,12 @@
 # Flow Control in Python
 
+> “Life is a series of natural and spontaneous changes. Don’t resist them –
+that only creates sorrow. Let reality be reality. Let things flow naturally
+forward in whatever way they like.” - Lao-Tzu
+
+<br/>
+[ Amit Kotlovski ](mailto:amit@amitkot.com) / [ @amitkot ](http://twitter.com/amitkot)
+
 
 
 # Agenda
@@ -15,6 +22,7 @@
 - Nested `if`
 - Code blocks
 - Symbol for end of line
+
 
 
 ## When is it needed?
@@ -136,7 +144,6 @@ Same as:
     if (i==5) {
     printf("Still is five");     // No indentation
     printf("Not six"); }
-
 
 
 
@@ -983,6 +990,5 @@ while True:
 
 
 # Thanks!
-##Just thought of a new question?
 
-courses@amitkotlovski.com
+[ Amit Kotlovski ](mailto:amit@amitkot.com) / [ @amitkot ](http://twitter.com/amitkot)
