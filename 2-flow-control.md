@@ -260,15 +260,17 @@ x = max(len([1, 2, 3, 4]), len([7])) + \
 ### Examples
 
 ```python
-a = True
-if a == True:           # True == True
-    print("a is True")
+>>> a = True
+>>> if a == True:           # True == True
+...    print("a is True")
+a is True
 ```
 And:
 
 ```python
-if 3 < 5:
-    print("3 is smaller")
+>>> if 3 < 5:
+...    print("3 is smaller")
+3 is smaller
 ```
 
 
@@ -276,31 +278,41 @@ if 3 < 5:
 ## Truth Value
 ### Values have Truth Values
 
-    a = True
-    if a == True:           # True == True
-        print("a is True")
+```python
+>>> a = True
+>>> if a == True:           # True == True
+...    print("a is True")
+a is True
+```
 
 Can also be written:
 
-    a = True
-    if a:                   # True
-        print("a is True")
+```python
+>>> a = True
+>>> if a:                   # True
+...    print("a is True")
+a is True
+```
 
 
 
 ## True Value
 ### So what value evaluate as True?
 <span class="fragment">
-Almost all of them
+Almost _all_ of them
 </span>
 
 
 
 ## Truth Value
 ### Example
-    a = 500
-    if a:                               # 500 evaluates as True
-        print("500 is True as well")
+
+```python
+>>> a = 500
+>>> if a:                               # 500 evaluates as True
+...    print("500 is True as well")
+500 is True as well
+```
 
 
 
@@ -356,10 +368,12 @@ Almost all of them
 ## `is`
 ### Quiz - True or False?
 
-- `7 is 7`
-- `7 == 7`
-- `7 == 7.0`
-- `7 is 7.0`
+Expression      | True or False?
+--              | --
+`7 is 7`        | <span class="fragment">True</span>
+`7 == 7`        | <span class="fragment">True</span>
+`7 == 7.0`      | <span class="fragment">True</span>
+`7 is 7.0`      | <span class="fragment">False</span>
 
 
 
@@ -397,7 +411,10 @@ name = 'Inigo Montoya'
 ## Comparing Different Types
 Useful for numerical types
 
-    5 > 3.3     # True
+```python
+>>> 5 > 3.3
+True
+```
 
 
 
@@ -405,7 +422,15 @@ Useful for numerical types
 Dangerous\* when comparing Number and String
 
 ```python
-'1' < 2     # False, Don't compare different types!
+>>> '1' < 2
+
+# in Python 2
+False     # Don't compare different types!
+
+# in Python 3
+Traceback (most recent call last):
+  File "<stdin>", line 1, in <module>
+TypeError: unorderable types: str() < int()
 ```
 <br/>
 <br/>
@@ -684,7 +709,7 @@ lychee 6
 
 
 
-## Rewriting out example using `for`
+## Rewriting our example using `for`
 
 ```python
 # >>> fruits = ['banana', 'apple', 'lychee']
@@ -733,13 +758,13 @@ All you need is love
 ## Using `range()`
 
 ```python
->>> range(5)        # Nubers from 1 to 4
+>>> range(5)        # Nubers from 0 to 4
 [0, 1, 2, 3, 4]
 
->>> range(2, 9)     # Numbers from 2 to 9
+>>> range(2, 9)     # Numbers from 2 to 8
 [2, 3, 4, 5, 6, 7, 8]
 
->>> range(2, 9, 3)  # Numbers from 2 to 9 in steps of 3
+>>> range(2, 9, 3)  # Numbers from 2 to 8 in steps of 3
 [2, 5, 8]
 ```
 
@@ -928,7 +953,7 @@ while True:
 
 ```python
 known_names = ['Dan', 'Gil', 'Adam']
-username = input('What is your name?']
+username = input('What is your name?')
 for name in known_names:
     if name == username:
         print('I know you!')
@@ -980,6 +1005,29 @@ while name != 'Banana':
 while True:
     pass    # Busy wait for Ctrl+C
 ```
+
+
+
+# Summary (1)
+
+- Conditional
+    - `if`, Nested `if`s
+- The Truth
+    - Truth Values: Almost all is `True`
+    - Comparisons: `>`, `<`, `in`, `is`
+    - Boolean Operations - `and`, `or`
+    - Chained Comparisons - `3 < x < 50`
+    - Conditional Expressions - `3 if x == 'small' else 300`
+    - Sequence and Collection Tests - `any`, `all`
+
+
+
+# Summary (2)
+- Loops
+    - `while`, `if`
+    - Looping Tools - `range`, `enumerate`, `zip`
+- Loop Control Statements
+    - `break`, `continue`, `pass`
 
 
 
