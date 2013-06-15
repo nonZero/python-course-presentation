@@ -856,6 +856,7 @@ dict_items([('Bill', 'blue'), ('David', 'brown'),
 ```
 
 
+
 # Summary
 
 - __Tuples__ are immutable lists
@@ -874,3 +875,5 @@ dict_items([('Bill', 'blue'), ('David', 'brown'),
 # Thanks!
 
 [ Amit Kotlovski ](mailto:amit@amitkot.com) / [ @amitkot ](http://twitter.com/amitkot)
+
+All Rights Reserved to Amit Kotlovski

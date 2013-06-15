@@ -31,7 +31,7 @@
 }
 
 .slides code {
-  font-size: 1.2em;
+  /*font-size: 1.2em;*/
   line-height: 1.5;
   max-height: none;
 }
@@ -43,6 +43,8 @@
 
 .slides table {
   width: 100%;
+  font-size: 0.8em;
+  line-height: 0.8em;
 }
 
 .slides table tr td:first-child {
@@ -66,4 +68,26 @@
   font-style: italic;
 }
 
+.presentation-details {
+    position: fixed;
+    bottom: 10px;
+	left:  10px;
+    width: 100%;
+    /*text-align:center;*/
+    display: inline;
+	font: .8em sans-serif;
+	color: #444;
+	padding: 20px 0 20px 60px;
+}
 
+/*.pesentation-details {*/
+	/*position: absolute;*/
+	/*left: 10px;*/
+	/*bottom: 10px;*/
+	/*font: .4em sans-serif;*/
+	/*color: #444;*/
+	/*padding: 20px 0 20px 60px;*/
+
+	/*[>background: url(../assets/about/drublic.png) no-repeat 0 0;<]*/
+	/*[>background-size: 50px 50px;<]*/
+/*}*/

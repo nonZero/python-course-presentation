@@ -1,4 +1,4 @@
-# Flow Control in Python
+# Flow Control
 
 > “Life is a series of natural and spontaneous changes. Don’t resist them –
 that only creates sorrow. Let reality be reality. Let things flow naturally
@@ -421,7 +421,7 @@ Dangerous\* when comparing Number and String
 
 ## Bananas
 
-![http://fr.fotopedia.com/items/zeb-tE_PEixKPoo](img/bananas.jpg)
+<img src="img/bananas.jpg" alt="http://fr.fotopedia.com/items/zeb-tE_PEixKPoo" style="height: 500px;"/>
 
 
 
@@ -992,3 +992,5 @@ while True:
 # Thanks!
 
 [ Amit Kotlovski ](mailto:amit@amitkot.com) / [ @amitkot ](http://twitter.com/amitkot)
+
+All Rights Reserved to Amit Kotlovski

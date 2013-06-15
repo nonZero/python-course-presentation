@@ -672,3 +672,5 @@ Concatenating a collection of strings
 # Thanks!
 
 [ Amit Kotlovski ](mailto:amit@amitkot.com) / [ @amitkot ](http://twitter.com/amitkot)
+
+All Rights Reserved to Amit Kotlovski
