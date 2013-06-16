@@ -426,6 +426,16 @@ Can we run `mixed.sort()`?
 [20, 500, 1, 17.3, 999, 888, 777]
 ```
 
+Can also be achieved using `+`:
+
+```python
+>>> numbers = [20, 500, 1, 17.3]
+>>> more_numbers = [999, 888, 777]
+
+>>> numbers + more_numbers
+[20, 500, 1, 17.3, 999, 888, 777]
+```
+
 
 ### Finding An Item's Index
 

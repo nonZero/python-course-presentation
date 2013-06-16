@@ -117,6 +117,20 @@ http://docs.python.org/reference/lexical_analysis.html
 
 
 
+## Raw Strings
+
+Prefix the string with an `r` to disable Special Characters
+
+```python
+>>> print('first\nsecond')          # normal string
+first
+second
+
+>>> print(r'first\nsecond')         # raw string
+first\nsecond```
+
+
+
 ## Concatenation
 ### Consecutive String Literals
 
@@ -265,19 +279,19 @@ True
 ## String Testing
 ### Selected Functions
 
-**function** | **description**
---- | ---
-count(_sub_) | how many times _sub_ appears in string
-endswith(_suffix_) | True if ends with _suffix_
-find(_sub_) | get lowest index where _sub_ is
-_sub_ in _str_ | check if _sub_ is a substring of _str_
-isalpha() | True if at least one char, all letters
-islower() | True if all cased chars are lowercase
-isnumeric() | True if at least one char, all numeric
-isspace() | True if at least one char, only whitespace
-istitle() | True if at least one char, all words have first letter capitalized
-isupper() | True if at least one char, all chars are uppercase
-startswith(_prefix_) | return True if string starts with _prefix_
+function                | description
+--                      | --
+count(_sub_)            | how many times _sub_ appears in string
+endswith(_suffix_)      | True if ends with _suffix_
+find(_sub_)             | get lowest index where _sub_ is
+_sub_ in _str_          | check if _sub_ is a substring of _str_
+isalpha()               | True if at least one char, all letters
+islower()               | True if all cased chars are lowercase
+isnumeric()             | True if at least one char, all numeric
+isspace()               | True if at least one char, only whitespace
+istitle()               | True if at least one char, all words have first letter capitalized
+isupper()               | True if at least one char, all chars are uppercase
+startswith(_prefix_)    | return True if string starts with _prefix_
 
 <br/>
 Find them all at [ The Python Documentation ](http://docs.python.org/3/library/stdtypes.html#text-sequence-type-str)
@@ -315,14 +329,14 @@ Find them all at [ The Python Documentation ](http://docs.python.org/3/library/s
 ## String Modification
 ### Selected Functions
 
-**function** | **description**
---- | ---
-center(_width_, [_fillchar_=' ']) | wrap with _fillchar_ until str is at least _width_ long
-ljust(_width_, [_fillchar_=' ']) | left justify using _fillchar_ in a string at least _width_ long
-lower() | changes all letters to lower case
-rjust(_width_, [_fillchar_=' ']) | right justify using _fillchar_ in a string at least _width_ long
-splitlines([_keepends_]) | split to a list of lines with/without newlines
-upper() | changes all letters to upper case
+function                        | description
+--                              | --
+center(_width_, [_fillchar_])   | wrap with _fillchar_ until str is at least _width_ long
+ljust(_width_, [_fillchar_])   | left justify using _fillchar_ in a string at least _width_ long
+lower()                         | changes all letters to lower case
+rjust(_width_, [_fillchar_])   | right justify using _fillchar_ in a string at least _width_ long
+splitlines([_keepends_])        | split to a list of lines with/without newlines
+upper()                         | changes all letters to upper case
 
 <br/>
 Find them all at [ The Python Documentation ](http://docs.python.org/3/library/stdtypes.html#text-sequence-type-str)
@@ -470,11 +484,11 @@ Hello Dan, nice to meet you!
 ## `format()`
 ### Advanced: Using different bases
 
-**Base**| **Digits**
---- | ---
-Binary | 0, 1
-Octal | 0, 1, 2, 3, 4, 5, 6, 7
-Decimal | 0, 1, 2, 3, 4, 5, 6, 7, 8, 9
+Base        | Digits
+--          | --
+Binary      | 0, 1
+Octal       | 0, 1, 2, 3, 4, 5, 6, 7
+Decimal     | 0, 1, 2, 3, 4, 5, 6, 7, 8, 9
 Hexadecimal | 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, a, b, c, d, e, f
 
 
@@ -482,18 +496,18 @@ Hexadecimal | 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, a, b, c, d, e, f
 ## `format()`
 ### Advanced: Using different bases
 
-**Base** | **Represenation**
---- | ---
-1 in Binary | <span class="fragment">1</span>
-2 in Binary | <span class="fragment">10</span>
---- | 
-7 in Octal | <span class="fragment">7</span>
-8 in Octal | <span class="fragment">10</span>
---- | 
-9 in Hexadecimal | <span class="fragment">9</span>
-10 in Hexadecimal | <span class="fragment">a</span>
-15 in Hexadecimal | <span class="fragment">f</span>
-16 in Hexadecimal | <span class="fragment">10</span>
+Base                | Represenation
+--                  | --
+1 in Binary         | <span class="fragment">1</span>
+2 in Binary         | <span class="fragment">10</span>
+---                 | 
+7 in Octal          | <span class="fragment">7</span>
+8 in Octal          | <span class="fragment">10</span>
+---                 | 
+9 in Hexadecimal    | <span class="fragment">9</span>
+10 in Hexadecimal   | <span class="fragment">a</span>
+15 in Hexadecimal   | <span class="fragment">f</span>
+16 in Hexadecimal   | <span class="fragment">10</span>
 
 ---
 How would you write 27 in other bases?

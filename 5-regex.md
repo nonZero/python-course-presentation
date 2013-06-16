@@ -123,10 +123,10 @@ None
 
 input   | pattern   | result
 --      | --        | --
-'cat'   | c.t       | ✔
-'cot'   | c.t       | ✔
-'coat'  | c.t       | ✘
-'bat'   | c.t       | ✘
+'cat'   | c.t       | <span class="fragment">✔</span>
+'cot'   | c.t       | <span class="fragment">✔</span>
+'coat'  | c.t       | <span class="fragment">✘</span>
+'bat'   | c.t       | <span class="fragment">✘</span>
 
 
 ## `'.'`
@@ -159,10 +159,10 @@ None
 
 input               | pattern   | result
 --                  | --        | --
-'book of job'       | ^book     | ✔
-'bookof job'        | ^book     | ✔
-' book of job'      | ^book     | ✘
-'the book of job'   | ^book     | ✘
+'book of job'       | ^book     | <span class="fragment">✔</span>
+'bookof job'        | ^book     | <span class="fragment">✔</span>
+' book of job'      | ^book     | <span class="fragment">✘</span>
+'the book of job'   | ^book     | <span class="fragment">✘</span>
 
 
 ## `'^'`
@@ -195,9 +195,9 @@ None
 
 input       | pattern   | result
 --          | --        | --
-'duck'      | duck$     | ✔
-'a duck'    | duck$     | ✔
-'ducks'     | duck$     | ✘
+'duck'      | duck$     | <span class="fragment">✔</span>
+'a duck'    | duck$     | <span class="fragment">✔</span>
+'ducks'     | duck$     | <span class="fragment">✘</span>
 
 
 ## `'$'`
@@ -229,10 +229,10 @@ None
 
 input       | pattern   | result
 --          | --        | --
-'duck'      | du*ck     | ✔
-'dck'       | du*ck     | ✔
-'duuuuuck'  | du*ck     | ✔
-'douck'     | du*ck     | ✘
+'duck'      | du*ck     | <span class="fragment">✔</span>
+'dck'       | du*ck     | <span class="fragment">✔</span>
+'duuuuuck'  | du*ck     | <span class="fragment">✔</span>
+'douck'     | du*ck     | <span class="fragment">✘</span>
 
 
 ## `'*'`
@@ -277,10 +277,10 @@ None
 
 input       | pattern   | result
 --          | --        | --
-'dog'       | do+g      | ✔
-'dooog'     | do+g      | ✔
-'dig'       | do+g      | ✘
-'dg'        | do+g      | ✘
+'dog'       | do+g      | <span class="fragment">✔</span>
+'dooog'     | do+g      | <span class="fragment">✔</span>
+'dig'       | do+g      | <span class="fragment">✘</span>
+'dg'        | do+g      | <span class="fragment">✘</span>
 
 
 ## `'+'`
@@ -314,9 +314,9 @@ Supporting British spelling - `'color'` or `'colour'` (`u` is optional)
 
 input       | pattern   | result
 --          | --        | --
-'color'     | colou?r   | ✔
-'colour'    | colou?r   | ✔
-'colouor'   | colou?r   | ✘
+'color'     | colou?r   | <span class="fragment">✔</span>
+'colour'    | colou?r   | <span class="fragment">✔</span>
+'colouor'   | colou?r   | <span class="fragment">✘</span>
 
 
 ## `'?'`
@@ -350,9 +350,9 @@ The word `'good'` with 5 `o`'s:
 
 input       | pattern   | result
 --          | --        | --
-'goooood'   | go{5}d    | ✔
-'gooooood'  | go{5}d    | ✘
-'good'      | go{5}d    | ✘
+'goooood'   | go{5}d    | <span class="fragment">✔</span>
+'gooooood'  | go{5}d    | <span class="fragment">✘</span>
+'good'      | go{5}d    | <span class="fragment">✘</span>
 
 
 ## {m}
@@ -386,10 +386,10 @@ The word good with 3-5 o's:
 
 input       | pattern   | result
 --          | --        | --
-'goood'     | go{3,5}d  | ✔
-'goooood'   | go{3,5}d  | ✔
-'good'      | go{3,5}d  | ✘
-'gooooood'  | go{3,5}d  | ✘
+'goood'     | go{3,5}d  | <span class="fragment">✔</span>
+'goooood'   | go{3,5}d  | <span class="fragment">✔</span>
+'good'      | go{3,5}d  | <span class="fragment">✘</span>
+'gooooood'  | go{3,5}d  | <span class="fragment">✘</span>
 
 
 ## {m,n}
@@ -425,11 +425,11 @@ The string 'star\*' with the actual char `*`:
 
 input       | pattern    | result
 --          | --         | --
-'star*'     | star\\*    | ✔
-'star\\*'   | star\\*    | ✘
-'star'      | star\\*    | ✘
-'starr'     | star\\*    | ✘
-'stark'     | star\\*    | ✘
+'star*'     | star\\*    | <span class="fragment">✔</span>
+'star\\*'   | star\\*    | <span class="fragment">✘</span>
+'star'      | star\\*    | <span class="fragment">✘</span>
+'starr'     | star\\*    | <span class="fragment">✘</span>
+'stark'     | star\\*    | <span class="fragment">✘</span>
 
 
 ## '\\'
@@ -467,10 +467,10 @@ The word 'mark' with 'm' or 'M':
 
 input       | pattern    | result
 --          | --         | --
-'mark'      | [Mm]ark    | ✔
-'Mark'      | [Mm]ark    | ✔
-'Dark'      | [Mm]ark    | ✘
-'ark'       | [Mm]ark    | ✘
+'mark'      | [Mm]ark    | <span class="fragment">✔</span>
+'Mark'      | [Mm]ark    | <span class="fragment">✔</span>
+'Dark'      | [Mm]ark    | <span class="fragment">✘</span>
+'ark'       | [Mm]ark    | <span class="fragment">✘</span>
 
 
 ## [abc]
@@ -506,11 +506,11 @@ Single capital letter or digit, followed by 'ark':
 
 input       | pattern       | result
 --          | --            | --
-'Mark'      | [A-Z0-9]ark   | ✔
-'Dark'      | [A-Z0-9]ark   | ✔
-'9ark'      | [A-Z0-9]ark   | ✔
-'mark'      | [A-Z0-9]ark   | ✘
-'ark'       | [A-Z0-9]ark   | ✘
+'Mark'      | [A-Z0-9]ark   | <span class="fragment">✔</span>
+'Dark'      | [A-Z0-9]ark   | <span class="fragment">✔</span>
+'9ark'      | [A-Z0-9]ark   | <span class="fragment">✔</span>
+'mark'      | [A-Z0-9]ark   | <span class="fragment">✘</span>
+'ark'       | [A-Z0-9]ark   | <span class="fragment">✘</span>
 
 
 ## [a-z]
@@ -546,12 +546,12 @@ Character different from `M` or `m` followed by 'ark':
 
 input       | pattern    | result
 --          | --         | --
-'Dark'      | [^Mm]ark   | ✔
-'Bark'      | [^Mm]ark   | ✔
-'9ark'      | [^Mm]ark   | ✔
-'Mark'      | [^Mm]ark   | ✘
-'mark'      | [^Mm]ark   | ✘
-'ark'       | [^Mm]ark   | ✘
+'Dark'      | [^Mm]ark   | <span class="fragment">✔</span>
+'Bark'      | [^Mm]ark   | <span class="fragment">✔</span>
+'9ark'      | [^Mm]ark   | <span class="fragment">✔</span>
+'Mark'      | [^Mm]ark   | <span class="fragment">✘</span>
+'mark'      | [^Mm]ark   | <span class="fragment">✘</span>
+'ark'       | [^Mm]ark   | <span class="fragment">✘</span>
 
 
 ## [^abc]
@@ -589,9 +589,9 @@ Either 'cat' or 'dog':
 
 input       | pattern       | result
 --          | --            | --
-'cat'       | cat&#124;dog  | ✔
-'dog'       | cat&#124;dog  | ✔
-'banana'    | cat&#124;dog  | ✘
+'cat'       | cat&#124;dog  | <span class="fragment">✔</span>
+'dog'       | cat&#124;dog  | <span class="fragment">✔</span>
+'banana'    | cat&#124;dog  | <span class="fragment">✘</span>
 
 
 ## '|'
@@ -920,10 +920,10 @@ and also faster
 
 # Summary
 
-- __Tuples__ are immutable lists
-- __Lists__ are ordered data collections with sort, find and more
-- __Sets__ are collections with no duplicate items
-- __Dictionaries__ map keys to values
+- Regular Expressions detect patterns in strings
+- Provide various ways to define the pattern
+- Can be used for altering the string
+- For simple needs prefer String's methods
 
 
 
