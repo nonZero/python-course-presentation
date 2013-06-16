@@ -46,8 +46,8 @@ forward in whatever way they like.” - Lao-Tzu
 ### Example
 
 ```python
-pass = input('Please enter your password:')
-if pass == 'banana':
+passwd = input('Please enter your password:')
+if passwd == 'banana':
     print('Password is correct!')
 ```
 
@@ -324,6 +324,7 @@ Almost _all_ of them
 - `0` in a Numerical value (`0`, `0.0`, etc.)
 - Empty Sequence - `""`, `[]`, `()`
 - Empty Dictionary - `{}`
+- Empty Set - `set()`
 
 
 
@@ -386,7 +387,7 @@ Expression      | True or False?
 
 
 
-## `is`
+## `in`
 ### Quiz - True or False?
 
 ```
@@ -702,6 +703,7 @@ in it's name
 >>> i = 0
 ... while i < len(fruits):
 ...     print(fruits[i], len(fruit[i]))
+...     i += 1
 banana 6
 apple 5
 lychee 6
@@ -804,7 +806,7 @@ How can we use `range()` to create this list?
 Iterating over a collection of items, using both the item and it's index:
 
 ```python
->>> stars = ['banana', 'apple', 'lychee']
+>>> fruits = ['banana', 'apple', 'lychee']
 >>> for i in range(len(fruits)):
 ...     print('no.', i, 'is', fruits[i])
 no. 0 is banana
@@ -817,7 +819,7 @@ no. 2 is lychee
 ## Rewrite using `enumerate()`
 
 ```python
-# >>> stars = ['banana', 'apple', 'lychee']
+# >>> fruits = ['banana', 'apple', 'lychee']
 # >>> for i in range(len(fruits)):
 # ...     print('no.', i, 'is', fruits[i])
 
@@ -910,13 +912,14 @@ Nicolas Appert had invented the Canned Food
 - `pass`
 
 
+
 ## Password Validation
 
 Remember the code for password validation?
 
 ```python
-pass = input('Please enter your password:')
-if pass == 'banana':
+passwd = input('Please enter your password:')
+if passwd == 'banana':
     print('Password is correct!')
 ```
 
@@ -930,7 +933,7 @@ Let's write it in a loop until the user enters the right password.
 passwd = input('Please enter your password:')
 while passwd != 'banana':
     print('Password is incorrect!')
-    pass = input('Please enter your password:')
+    passwd = input('Please enter your password:')
 ```
 
 Can we write it without code duplication?
@@ -942,7 +945,7 @@ Can we write it without code duplication?
 ```python
 while True:
     passwd = input('Please enter your password:')
-    if passwd = 'banana':
+    if passwd == 'banana':
         break
     print('Password is incorrect!')
 ```
@@ -988,6 +991,7 @@ while True:
         print('Boom!')
         continue
     print(i)
+    i += 1
 ```
 
 
