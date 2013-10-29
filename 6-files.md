@@ -483,11 +483,6 @@ a *context manager* for using a file and closing it automatically
 ![Questions](img/q_everything.jpg "Duncan Hull, https://secure.flickr.com/photos/dullhunk/202872717/")
 
 
-<section data-background="img/q_everything.jpg">
-    <h2>This slide will have a full-size background image.</h2>
-</section>
-
-
 
 # Thanks!
 
