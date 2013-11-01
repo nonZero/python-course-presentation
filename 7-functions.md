@@ -306,60 +306,8 @@ after
 
 ## Function Name
 
-
-
-## Function Name
-### _name - One Underscore Prefix
-
-
-
-## Function Name
-### name_ - One Underscore Suffix
-
-
-
-## Function Name
-### __name - Two Underscore Prefix
-
-```python
-class A(object):
-    def __b(self):
-        return 42
-    def c(self):
-        return self.__b()
-```
-```python
->>> a = A()
->>> a.__b()
-AttributeError: A instance has no attribute '__b'
-
->>> a.c()
-42
-
->>> a._A__b()
-42
-```
-
-
-
-## Function Name
-### \_\_name\_\_ - Two Underscore Prefix and Suffix
-
-"Magic" names for interacting with Python Framework
-
-```python
-class A(object):
-    def __len__(self):
-        return 42
-```
-```python
->>> a = A()
->>> len(a)
-42
-
->>> a.__len__()
-42
-```
+The rules are similar to variable names, we'll talk about it more in the next
+topic - Classes.
 
 
 

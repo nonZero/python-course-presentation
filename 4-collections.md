@@ -1,4 +1,4 @@
-# Collections
+# Types
 
 <br/>
 [ Amit Kotlovski ](mailto:amit@amitkot.com) / [ @amitkot ](http://twitter.com/amitkot)
@@ -7,6 +7,8 @@
 
 # Agenda
 
+- Numbers
+- Strings
 - Tuples
 - Lists
 - Sets
@@ -40,6 +42,7 @@
 ```
 
 
+
 ## Creating a tuple
 ### Converting a list
 
@@ -64,6 +67,7 @@ Traceback (most recent call last):
   File "<stdin>", line 1, in <module>
 AttributeError: 'tuple' object has no attribute 'add'
 ```
+
 
 
 ## Immutable Container
@@ -98,6 +102,7 @@ Accessing a single item
 ```
 
 
+
 ## Slicing
 
 Slicing a range
@@ -107,6 +112,7 @@ Slicing a range
 >>> t[0:2]
 ('Atreides', 'Ordos')
 ```
+
 
 
 ## Slicing - Full syntax
@@ -132,6 +138,7 @@ Example - Slicing a range with a step of 2
 ```
 
 
+
 ## Slicing - Quiz
 
 How will we slice backwards from the item at location 8 until the item at
@@ -150,6 +157,7 @@ location 2 with a step of 2?
 - Adding
 - Multiplying
 - Length
+
 
 
 ### Packing and Unpacking
@@ -173,9 +181,11 @@ Unpacking
 ```
 
 
+
 ### Swapping
 
 How would you swap values between two variables?
+
 
 
 ### Swapping - Using a Temporary variable
@@ -193,6 +203,7 @@ How would you swap values between two variables?
 ```
 
 
+
 ### Swapping - Using Tuples
 
 ```python
@@ -204,6 +215,7 @@ How would you swap values between two variables?
 >>> print(a, b)
 111 33
 ```
+
 
 
 ### Adding
@@ -218,6 +230,7 @@ Adding tuples concatenates them
 ```
 
 
+
 ### Multiplying
 
 Multiplying tuples is adding them to themselves
@@ -229,6 +242,7 @@ Multiplying tuples is adding them to themselves
 >>> t * 3
 ('a', 'b', 'a', 'b', 'a', 'b')
 ```
+
 
 
 ### Length
@@ -265,6 +279,7 @@ Using the `len()` function we previously met
 ```
 
 
+
 ## Adding to List
 ### Inserting __before__ a specific position
 
@@ -276,6 +291,7 @@ Using the `len()` function we previously met
 ['Homer', 'Marge', 'Bart', 'Lisa', 'Maggie', \
  "Santa's Little Helper"]
 ```
+
 
 
 ## Adding to List
@@ -313,6 +329,7 @@ Specifying index for pop:
 >>> simpsons
 ['Homer', 'Marge', 'Bart', 'Lisa', 'Maggie']
 ```
+
 
 
 ## Remove
@@ -366,6 +383,7 @@ Reverse Sort:
 ```
 
 
+
 ## Sort
 ### Mixing different types?
 
@@ -377,6 +395,7 @@ Can we run `mixed.sort()`?
 ##<span class='fragment'>Python 2 - _Yeah, OK_</span>
 
 ##<span class='fragment'>Python 3 - _Nope_</span>
+
 
 
 ## Sort
@@ -407,6 +426,7 @@ Can we run `mixed.sort()`?
 ```
 
 
+
 ### Counting Occurrences
 
 ```python
@@ -414,6 +434,7 @@ Can we run `mixed.sort()`?
 >>> numbers.count(20)
 2
 ```
+
 
 
 ### Extending The List
@@ -437,6 +458,7 @@ Can also be achieved using `+`:
 ```
 
 
+
 ### Finding An Item's Index
 
 ```python
@@ -444,6 +466,7 @@ Can also be achieved using `+`:
 >>> numbers.index(17.3)
 3
 ```
+
 
 
 ### Reversing the List's Order
@@ -470,6 +493,7 @@ Can also be achieved using `+`:
 ## Basics
 
 
+
 ### Creating a new Set
 
 ```python
@@ -477,6 +501,7 @@ Can also be achieved using `+`:
 >>> s
 {(1, 2), 'once', 5.17}
 ```
+
 
 
 ### Creating a Set from a List
@@ -491,6 +516,7 @@ Can also be achieved using `+`:
 ```
 
 
+
 ### Adding an item
 
 ```python
@@ -500,6 +526,7 @@ Can also be achieved using `+`:
 >>> s
 {'once', (1, 2), 5.17, 'banana'}
 ```
+
 
 
 ### Removing an Item
@@ -517,6 +544,7 @@ Can also be achieved using `+`:
 ## Set Uses
 
 
+
 ### Remove Duplicate Items in List
 
 ```python
@@ -524,6 +552,7 @@ Can also be achieved using `+`:
 >>> set(l)
 {'second', 'first', 'third'}
 ```
+
 
 
 ### Intersection
@@ -539,6 +568,7 @@ Can also be achieved using `+`:
 ```
 
 
+
 ### Union
 
 ![ Union ](img/union.svg)
@@ -550,6 +580,7 @@ Can also be achieved using `+`:
 >>> sweet | yellow              # short syntax
 {'mustard', 'banana', 'jam', 'sugar', 'lemon', 'mango'}
 ```
+
 
 
 ### Difference
@@ -565,6 +596,7 @@ Can also be achieved using `+`:
 ```
 
 
+
 ### Symmetric Difference
 
 ![ Symmetric Difference ](img/symmetric_diff.svg)
@@ -576,6 +608,7 @@ Can also be achieved using `+`:
 >>> sweet ^ yellow              # short syntax
 {'jam', 'sugar', 'mustard', 'lemon'}
 ```
+
 
 
 ### Subset\Superset
@@ -596,6 +629,7 @@ True
 ```
 
 
+
 ### Disjoint
 
 ![ Disjoint ](img/disjoint.svg)
@@ -609,6 +643,7 @@ True
 
 
 ## Set Operations
+
 
 
 ### `copy()`
@@ -628,6 +663,7 @@ Copies the Set to a new separate one
 ```
 
 
+
 ### `discard()`
 
 Removes an item from the Set, if it's there. Does not report error if not there.
@@ -641,6 +677,7 @@ Removes an item from the Set, if it's there. Does not report error if not there.
 ```
 
 
+
 ### `pop()`
 
 Extracts _some_ item from the Set
@@ -650,6 +687,7 @@ Extracts _some_ item from the Set
 >>> sweet.pop()
 'mango'
 ```
+
 
 
 ### `clear()`
@@ -698,11 +736,13 @@ Equivalent to:
 ## Keys & Values
 
 
+
 ### Key - immutable
 
 - number
 - string
 - tuple
+
 
 
 ### Value - Any Type
@@ -712,6 +752,7 @@ Equivalent to:
 - sets
 - dictionaries
 - user-created types (we'll soon meet)
+
 
 
 ### Quiz
@@ -727,6 +768,7 @@ What will this dictionary contain?
 ## Adding, Getting and Removing
 
 
+
 ### Adding
 
 ```python
@@ -736,6 +778,7 @@ What will this dictionary contain?
 {'Bill': 'blue', 'David': 'brown', 'Daenerys': 'violet', 
  'Ron': 'black'}
 ```
+
 
 
 ### Get Value by Key
@@ -756,6 +799,7 @@ get(key, default_val) | value for _key_ if exists, _default_val_ otherwise
 ```
 
 
+
 ### Remove - `del`
 
 ```python
@@ -764,6 +808,7 @@ get(key, default_val) | value for _key_ if exists, _default_val_ otherwise
 >>> eye
 {'Bill': 'blue', 'Ron': 'black'}
 ```
+
 
 
 ### Remove - `pop()`
@@ -788,6 +833,7 @@ Providing a default value, in case the key does not exist:
 ```
 
 
+
 ### Remove - `popitem()`
 
 Pop _some_ item from the Dictionary:
@@ -803,6 +849,7 @@ Pop _some_ item from the Dictionary:
 ## Dictionary Methods
 
 
+
 ### is Key in Dictionary?
 
 ```python
@@ -814,6 +861,7 @@ True
 ```
 
 
+
 ### `clear()`
 
 ```python
@@ -823,6 +871,7 @@ True
 >>> eye
 {}
 ```
+
 
 
 ### `copy()`
@@ -839,6 +888,7 @@ True
 >>> eye_backup
 {'Bill': 'blue', 'David': 'brown', 'Ron': 'black'}
 ```
+
 
 
 ### `keys()`, `values()` and `items()`

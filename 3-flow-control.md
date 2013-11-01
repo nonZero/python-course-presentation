@@ -20,8 +20,6 @@ forward in whatever way they like.” - Lao-Tzu
 
 - `if`
 - Nested `if`
-- Code blocks
-- Symbol for end of line
 
 
 
@@ -46,7 +44,7 @@ forward in whatever way they like.” - Lao-Tzu
 ### Example
 
 ```python
-passwd = input('Please enter your password:')
+passwd = raw_input('Please enter your password:')
 if passwd == 'banana':
     print('Password is correct!')
 ```
@@ -768,7 +766,7 @@ Nicolas Appert had invented the Canned Food
 Remember the code for password validation?
 
 ```python
-passwd = input('Please enter your password:')
+passwd = raw_input('Please enter your password:')
 if passwd == 'banana':
     print('Password is correct!')
 ```
@@ -780,10 +778,10 @@ Let's write it in a loop until the user enters the right password.
 ## Password validation code in a loop
 
 ```python
-passwd = input('Please enter your password:')
+passwd = raw_input('Please enter your password:')
 while passwd != 'banana':
     print('Password is incorrect!')
-    passwd = input('Please enter your password:')
+    passwd = raw_input('Please enter your password:')
 ```
 
 Can we write it without code duplication?
@@ -794,7 +792,7 @@ Can we write it without code duplication?
 
 ```python
 while True:
-    passwd = input('Please enter your password:')
+    passwd = raw_input('Please enter your password:')
     if passwd == 'banana':
         break
     print('Password is incorrect!')
@@ -806,7 +804,7 @@ while True:
 
 ```python
 known_names = ['Dan', 'Gil', 'Adam']
-username = input('What is your name?')
+username = raw_input('What is your name?')
 for name in known_names:
     if name == username:
         print('I know you!')
@@ -864,24 +862,19 @@ while True:
 
 # Summary (1)
 
-- Conditional
-    - `if`, Nested `if`s
-- The Truth
-    - Truth Values: Almost all is `True`
-    - Comparisons: `>`, `<`, `in`, `is`
-    - Boolean Operations - `and`, `or`
-    - Chained Comparisons - `3 < x < 50`
-    - Conditional Expressions - `3 if x == 'small' else 300`
-    - Sequence and Collection Tests - `any`, `all`
+- `if` checks for truth value
+- Most values evaluate as `True`
+- Chained comparisons come handy: 20 < x < 100
+- Parenthesis are not required in conditional expressions:
+    - `x > 3 and y == 50`
+    - (`x > 3) and (y == 50`)
 
 
 
 # Summary (2)
-- Loops
-    - `while`, `if`
-    - Looping Tools - `range`, `enumerate`, `zip`
-- Loop Control Statements
-    - `break`, `continue`, `pass`
+- `while` and `for` are used for looping
+- `range(num)` is useful for performing `num` iterations
+- `break` and `continue` are loop super-powers!
 
 
 
