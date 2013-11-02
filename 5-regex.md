@@ -612,7 +612,7 @@ None
 
 # Questions
 
-![Questions](img/q_and_a.jpg)
+![Questions](img/q_everything.jpg "Duncan Hull, https://secure.flickr.com/photos/dullhunk/202872717/")
 
 
 
@@ -914,7 +914,7 @@ and also faster
 
 # Questions
 
-![Questions](img/q_and_a.jpg)
+![Questions](img/q_everything.jpg "Duncan Hull, https://secure.flickr.com/photos/dullhunk/202872717/")
 
 
 
@@ -936,7 +936,7 @@ and also faster
 
 # Questions
 
-![Questions](img/q_and_a.jpg)
+![Questions](img/q_everything.jpg "Duncan Hull, https://secure.flickr.com/photos/dullhunk/202872717/")
 
 
 

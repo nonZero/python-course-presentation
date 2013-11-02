@@ -260,7 +260,7 @@ Using the `len()` function we previously met
 
 # Questions
 
-![Questions](img/q_and_a.jpg)
+![Questions](img/q_everything.jpg "Duncan Hull, https://secure.flickr.com/photos/dullhunk/202872717/")
 
 
 
@@ -482,7 +482,7 @@ Can also be achieved using `+`:
 
 # Questions
 
-![Questions](img/q_and_a.jpg)
+![Questions](img/q_everything.jpg "Duncan Hull, https://secure.flickr.com/photos/dullhunk/202872717/")
 
 
 
@@ -705,7 +705,7 @@ set()
 
 # Questions
 
-![Questions](img/q_and_a.jpg)
+![Questions](img/q_everything.jpg "Duncan Hull, https://secure.flickr.com/photos/dullhunk/202872717/")
 
 
 
@@ -928,7 +928,7 @@ dict_items([('Bill', 'blue'), ('David', 'brown'),
 
 # Questions
 
-![Questions](img/q_and_a.jpg)
+![Questions](img/q_everything.jpg "Duncan Hull, https://secure.flickr.com/photos/dullhunk/202872717/")
 
 
 

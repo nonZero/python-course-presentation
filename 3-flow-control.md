@@ -88,7 +88,7 @@ Instead use if-elif-else to implement all different cases
 
 # Questions
 
-![Questions](img/q_and_a.jpg)
+![Questions](img/q_everything.jpg "Duncan Hull, https://secure.flickr.com/photos/dullhunk/202872717/")
 
 
 
@@ -190,7 +190,7 @@ Almost _all_ of them
 
 # Questions
 
-![Questions](img/q_and_a.jpg)
+![Questions](img/q_everything.jpg "Duncan Hull, https://secure.flickr.com/photos/dullhunk/202872717/")
 
 
 
@@ -476,7 +476,7 @@ surprising at times
 
 # Questions
 
-![Questions](img/q_and_a.jpg)
+![Questions](img/q_everything.jpg "Duncan Hull, https://secure.flickr.com/photos/dullhunk/202872717/")
 
 
 
@@ -880,7 +880,7 @@ while True:
 
 # Questions
 
-![Questions](img/q_and_a.jpg)
+![Questions](img/q_everything.jpg "Duncan Hull, https://secure.flickr.com/photos/dullhunk/202872717/")
 
 
 
