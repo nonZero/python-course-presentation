@@ -20,7 +20,7 @@
 
 # Introduction
 
-[ Picture of a living room table ]
+![living room table](img/living_room_table_640.jpg)
 
 
 
