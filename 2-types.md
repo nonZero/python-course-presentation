@@ -1,4 +1,4 @@
-# Types
+# Types in Depth
 
 <br/>
 [ Amit Kotlovski ](mailto:amit@amitkot.com) / [ @amitkot ](http://twitter.com/amitkot)
@@ -13,6 +13,25 @@
 - Lists
 - Sets
 - Dictionaries
+
+
+
+# Numbers
+
+- int
+- float
+- log
+- complex
+
+
+
+# Strings
+
+- 'this is a string'
+- "this is also a string"
+- """This is a long string that may span more than one line but still stay one string"""
+- 'these strings are now ' + 'concatenated together'
+- converting other types to string using str()
 
 
 
