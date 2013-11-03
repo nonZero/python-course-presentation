@@ -283,7 +283,9 @@ c_long(99)
 # Summary
 
 - `ctypes` allows us to access functions in C libraries
-- Easy for ints and strings, not much harder using other data types
+- Trivial when using ints and strings, easy using other data types
+- Errors in C can be detected using return code
+- Memory can be allocated from Python code
 
 
 
