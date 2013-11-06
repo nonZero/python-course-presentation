@@ -11,6 +11,7 @@
 - Python Script Anatomy
 - Code Blocks
 - Line End
+- Python Identifier Rules
 
 
 
@@ -268,6 +269,49 @@ x = max(len([1, 2, 3, 4]), len([7])) + min(len([11, 12]),
 x = max(len([1, 2, 3, 4]), len([7])) + \
     min(len([11, 12]), len([]))
 ```
+
+
+
+## Python Identifier Rules
+### Class, Function and Variable Names
+
+- Starts with a letter or \_
+- Continues with letters, digits or more \_ chars
+- Identifier is case sensitive
+
+
+
+## Python Identifier Rules
+
+Valid:
+
+- `cat`
+- `dog3`
+- `__banana`
+- `a___`
+- `_ (avoid)`
+- `random_number`
+
+
+
+## Python Identifier Rules
+
+Invalid:
+
+- `3crocodile`
+- `star@david`
+
+
+
+## Python Identifier Rules
+### Quiz
+
+Are these valid?
+
+- `sesame`
+- `_32_`
+- `32`
+- `_`
 
 
 
