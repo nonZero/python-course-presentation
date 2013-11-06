@@ -18,10 +18,54 @@
 
 # Numbers
 
-- int
-- float
-- log
-- complex
+- `int`
+- `float`
+- `long`
+- `complex`
+
+
+
+## Numbers
+
+- `int` is implemented as C long (32 bits at least)
+- `long` is unlimited
+- `float` is implemented as C double
+
+
+
+## `int` bases
+- Binary (0b prefix)
+- Octal (0o prefix)
+- Decimal (no prefix)
+- Hexadecimal (0x prefix)
+
+
+
+## `int` division
+
+```python
+print(12 / 5)
+⇒ 2				// only whole part
+print(12.0 / 5)
+⇒ 2.4			// exact
+print(12 / 5.0)
+⇒ 2.4			// exact
+```
+
+
+
+## Converting Types
+
+```python
+>>> int(12.567)
+12
+
+>>> float(12)
+12.0
+
+>>> str(12.0)
+'12.0'
+```
 
 
 
