@@ -78,6 +78,12 @@ is it high? False
 
 
 
+## Function → Method
+
+Add first parameter `self` for accessing class instance
+
+
+
 ## Constructor Method
 
 ```python
@@ -104,15 +110,21 @@ class LivingRoomTable(object):
 ## Method Name
 ### _name - One Underscore Prefix
 
+A hint of privacy
+
 
 
 ## Method Name
 ### name_ - One Underscore Suffix
 
+When using reserved words
+
 
 
 ## Method Name
 ### __name - Two Underscore Prefix
+
+Name mangling
 
 ```python
 class A(object):

@@ -109,6 +109,7 @@ What does it do?
 The package directory structure:
 ```
 furniture/
+        __init__.py
 		tables/
 				__init__.py
 				livingroomtable.py

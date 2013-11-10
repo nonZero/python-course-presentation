@@ -86,15 +86,15 @@ def nothing():
 
 ### Passed By Value
 ```python
-def assign(a):
-    a = 500
+def change(var):
+    var = 'Changed'
 ```
 
 ```python
->>> aa = 3
->>> assign(aab)
+>>> aa = 'Original'
+>>> change(aa)
 >>> print aa
-3
+Original
 ```
 
 
