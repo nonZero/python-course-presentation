@@ -306,7 +306,7 @@ parser.add_option("-q", "--quiet", action="store_false",
 
 
 
-## Action Types
+## Main Action Types
 
 Argument        | Meaning
 ---             | ---
@@ -314,6 +314,7 @@ Argument        | Meaning
 `store_true`    | Store a true value
 `store_false`   | Store a false value
 
+See more at [The Python Documentation](http://docs.python.org/2/library/optparse.html#defining-options)
 
 
 
