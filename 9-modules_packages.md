@@ -287,12 +287,47 @@ args are ['fruits', 'vegetables', 'books']
 
 
 
+## Adding Options
+
+Argument    | Meaning                           | Example
+---         | ---                               | ---
+short       | Short option                      | "-f"
+long        | Long option                       | "--file"
+action      | How to use the argument           | action="store"
+type        | Type of data of the argument      | type="string"
+dest        | Variable the argument is saved to | dest="filename"
+default     | Default value                     | default="default_file" or leave out for None
+help        | Help explanation for this option  | help="Name of the file to be used"
+
+```python
+parser.add_option("-q", "--quiet", action="store_false", 
+                  dest="verbose", default=True)
+```
+
+
+
+## Action Types
+
+Argument        | Meaning
+---             | ---
+`store`         | Store the option's argument (default)
+`store_true`    | Store a true value
+`store_false`   | Store a false value
+
+
+
+
+
+
+
+
+
 # Summary
 
 - Every Python file is a module
 - A Package is a directory of Python files with an \_\_init\_\_.py file in it
 - Modules are imported with their (optional) namespace
-- Python has many built in and 3'rd Party libraries for solving common problemns
+- Python has many built in and 3'rd Party libraries for solving common problems
 
 
 
