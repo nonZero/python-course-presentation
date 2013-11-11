@@ -319,11 +319,6 @@ See more at [The Python Documentation](http://docs.python.org/2/library/optparse
 
 
 
-
-
-
-
-
 # Summary
 
 - Every Python file is a module
