@@ -127,22 +127,53 @@ after try+except
 
 
 
-## Logging
+## Raising Exceptions
 
+```python
+def print_small_numbers(data):
+    if data > 40:
+        raise ValueError("this method only prints small numbers")
+    print 'here is a small number: ', data
+
+print_small_numbers(7)
+print ''
+print_small_numbers(70)
+```
+```python
+$ python raise_exception.py
+here is a small number:  7
+
+Traceback (most recent call last):
+  File "raise_exception.py", line 8, in <module>
+    print_small_numbers(70)
+  File "raise_exception.py", line 3, in print_small_numbers
+    raise ValueError("this method only prints small numbers")
+ValueError: this method only prints small numbers
+```
+
+
+
+## Logging
+### Setup
 To console:
 ```python
 import logging
-logging.info('Something happend')
+# optional - set minimum log level to be handled
+logging.basicConfig(level=logging.INFO)
 ```
 
 To File:
 ```python
 import logging
 logging.basicConfig(filename='example.log',level=logging.DEBUG)
-logging.debug('This message should go to the log file')
 ```
 
+
+
+## Logging
+### Log Levels
 Different log levels:
+
 ```python
 import logging
 logging.info('Something happend')
@@ -175,32 +206,6 @@ ValueError: An invalid value could have been passed
 - In case there is no way to solve the error
 - Exits the script, returning a number to the process that started us
 - Return a non-zero number for errors
-
-
-
-## Raising Exceptions
-
-```python
-def print_small_numbers(data):
-    if data > 40:
-        raise ValueError("this method only prints small numbers")
-    print 'here is a small number: ', data
-
-print_small_numbers(7)
-print ''
-print_small_numbers(70)
-```
-```python
-$ python raise_exception.py
-here is a small number:  7
-
-Traceback (most recent call last):
-  File "raise_exception.py", line 8, in <module>
-    print_small_numbers(70)
-  File "raise_exception.py", line 3, in print_small_numbers
-    raise ValueError("this method only prints small numbers")
-ValueError: this method only prints small numbers
-```
 
 
 
@@ -274,18 +279,20 @@ BaseException
 class BananaError(ValueError):
     def __init__(self, sweetness_level):
         self.sweetness = sweetness_level
+    def __str__(self):
+        return 'sweetness level is too low - ' + str(self.sweetness)
 
 def second():
     raise BananaError(0.3)
 
-try:
-    second()
-except BananaError, be:
-    print 'sweetness level is too low - ', be.sweetness
+second()
 ```
 ```python
 $ python custom_exception.py
-sweetness level is too low -  0.3
+Traceback (most recent call last):
+  File "<stdin>", line 1, in <module>
+  File "<stdin>", line 2, in second
+__main__.BananaError: sweetness level is too low - 0.3
 ```
 
 
@@ -306,11 +313,38 @@ finally:
 
 
 
-## Assert
+## `assert`
 
 - We can add asserts for things that must always be True
 - If they fail we get an AssertionError
 - Not recommended in production code
+
+
+
+## `assert`
+
+```python
+LIMIT = 5
+def run_method(valid=True):
+    if valid:
+        import random
+        return random.choice(range(LIMIT))
+    return LIMIT
+
+def use_result():
+    result = run_method()
+    assert result < LIMIT, 'run_method() returned an invalid value!'
+    result = run_method(valid=False)
+    assert result < LIMIT, 'run_method() returned an invalid value!'
+```
+```python
+>>> use_result()
+it pays to be valid
+Traceback (most recent call last):
+  File "<stdin>", line 1, in <module>
+  File "<stdin>", line 6, in use_result
+AssertionError: run_method() returned an invalid value!
+```
 
 
 

@@ -190,7 +190,7 @@ But the problem is not solved yet:
 
 ## `copy.deepcopy()`
 
-- How does it work?
+How does it work?
 
 
 

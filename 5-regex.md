@@ -26,6 +26,7 @@ True
 ```
 
 
+
 ## More complex
 
 Now, let's look for either `'cat'` or `'kitten'`:
@@ -46,14 +47,15 @@ Too long, hard to read, hard to maintain, not efficient
 </span>
 
 
+
 ## Meet `re`
 
 ```python
 >>> s = 'the white kitten is sleeping'
 >>> import re
->>> print(re.search(r'cat|kitten', s).span())
+>>> re.search(r'cat|kitten', s).span()
 (10, 16)
->>> print(re.search(r'dog|puppy', s))
+>>> re.search(r'dog|puppy', s)
 None
 ```
 
@@ -65,11 +67,11 @@ None
 ![ Ken ](img/ken.jpg "http://www.catb.org/~esr/jargon/html/U/Unix.html")
 
 - __Stephen Cole__, 1950s - _regular sets_
-- __Ken Thompson__  - built it into the _QED_ and _ed_,
+- __Ken Thompson__  - _QED_ and _ed_,
   influencing _AWK_, _Emacs_ and _vi_
-- Perl - influenced by a __Henry Spencer__'s regex library
-- Other languages influenced by Perl, amongst them Python
-- Was Later added to industry standards like ISO SGML
+- __Henry Spencer__'s regex library influenced _Perl_
+- Other languages influenced, amongst them Python
+- Added to industry standards such as ISO SGML
 
 
 
@@ -99,10 +101,10 @@ first\nsecond
 Let's search for the string `kit`:
 
 ```python
->>> print(re.search(r'kit', 'nice kitten').span())
+>>> re.search(r'kit', 'nice kitten').span()
 (5, 8)
  
->>> print(re.search(r'kit', 'nice banana'))
+>>> re.search(r'kit', 'nice banana')
 None
 ```
 
@@ -117,6 +119,7 @@ None
 </span>
 
 
+
 ## `'.'`
 
 `'c'`, followed by any single char, followed by `'t'`:
@@ -129,16 +132,17 @@ input   | pattern   | result
 'bat'   | c.t       | <span class="fragment">✘</span>
 
 
+
 ## `'.'`
 ### Any Single Char
 
 `'c'`, followed by any single char, followed by `'t'`:
 
 ```python
->>> print(re.search(r'c.t', 'I found a cat').span())
+>>> re.search(r'c.t', 'I found a cat').span()
 (10, 13)
 
->>> print(re.search(r'c.t', 'I found a coat'))
+>>> re.search(r'c.t', 'I found a coat')
 None
 ```
 
@@ -153,6 +157,7 @@ None
 </span>
 
 
+
 ## `'^'`
 
 `book` at the start of the string:
@@ -165,16 +170,17 @@ input               | pattern   | result
 'the book of job'   | ^book     | <span class="fragment">✘</span>
 
 
+
 ## `'^'`
 ### Start of String
 
 `book` at the start of the string:
 
 ```python
->>> print(re.search(r'^book', 'book of job').span())
+>>> re.search(r'^book', 'book of job').span()
 (0, 4)
 
->>> print(re.search(r'^book', ' book of job'))
+>>> re.search(r'^book', ' book of job')
 None
 ```
 
@@ -189,6 +195,7 @@ None
 </span>
 
 
+
 ## `'$'`
 
 `duck` at the end of the string:
@@ -200,15 +207,16 @@ input       | pattern   | result
 'ducks'     | duck$     | <span class="fragment">✘</span>
 
 
+
 ## `'$'`
 ### End of String
 
 `duck` at the end of the string:
 
 ```python
->>> print(re.search(r'duck$', 'a duck').span())
+>>> re.search(r'duck$', 'a duck').span()
 (2, 6)
->>> print(re.search(r'duck$', 'many ducks'))
+>>> re.search(r'duck$', 'many ducks')
 None
 ```
 
@@ -216,16 +224,17 @@ None
 
 ## `'*'`
 
-`'d'` followed 0 or more `'u'` chars, then `'ck'`
+`'d'` followed by zero or more `'u'` chars, then `'ck'`
 
 <span class="fragment">
 `du*ck`
 </span>
 
 
+
 ## `'*'`
 
-`'d'` followed 0 or more `'u'` chars, then `'ck'`
+`'d'` followed by zero or more `'u'` chars, then `'ck'`
 
 input       | pattern   | result
 --          | --        | --
@@ -235,28 +244,29 @@ input       | pattern   | result
 'douck'     | du*ck     | <span class="fragment">✘</span>
 
 
+
 ## `'*'`
 ### 0 or more repetitions of previous RE
 
-`'d'` followed 0 or more `'u'` chars, then `'ck'`
+`'d'` followed by zero or more `'u'` chars, then `'ck'`
 
 ```python
->>> print(re.search(r'du*ck', 'duck').span())
+>>> re.search(r'du*ck', 'duck').span()
 (0, 4)
->>> print(re.search(r'du*ck', 'dck').span())
+>>> re.search(r'du*ck', 'dck').span()
 (0, 3)
->>> print(re.search(r'du*ck', 'duuuuck').span())
+>>> re.search(r'du*ck', 'duuuuck').span()
 (0, 7)
->>> print(re.search(r'du*ck', 'douck'))
+>>> re.search(r'du*ck', 'douck')
 None
 ```
 
 `'d'`, any number of __any__ char, then `'ck'`:
 
 ```python
->>> print(re.search(r'd.*ck', 'duck').span())
+>>> re.search(r'd.*ck', 'duck').span()
 (0, 4)
->>> print(re.search(r'd.*ck', 'donald duck').span())
+>>> re.search(r'd.*ck', 'donald duck').span()
 (0, 11)
 ```
 
@@ -271,6 +281,7 @@ None
 </span>
 
 
+
 ## `'+'`
 
 `'d'`, one or more `'o'` chars, then `'g':`
@@ -283,17 +294,18 @@ input       | pattern   | result
 'dg'        | do+g      | <span class="fragment">✘</span>
 
 
+
 ## `'+'`
 ### 1 or more repetitions of previous RE
 
 `'d'`, one or more `'o'` chars, then `'g':`
 
 ```python
->>> print(re.search(r'do+g', 'dog').span())
+>>> re.search(r'do+g', 'dog').span()
 (0, 3)
->>> print(re.search(r'do+g', 'doooooog').span())
+>>> re.search(r'do+g', 'doooooog').span()
 (0, 8)
->>> print(re.search(r'do+g', 'dg'))
+>>> re.search(r'do+g', 'dg')
 None
 ```
 
@@ -308,6 +320,7 @@ Supporting British spelling - `'color'` or `'colour'` (`u` is optional)
 </span>
 
 
+
 ## `'?'`
 
 Supporting British spelling - `'color'` or `'colour'` (`u` is optional)
@@ -319,17 +332,18 @@ input       | pattern   | result
 'colouor'   | colou?r   | <span class="fragment">✘</span>
 
 
+
 ## `'?'`
 ### 0 or 1 repetitions of previous RE
 
 Supporting British spelling - `'color'` or `'colour'` (`u` is optional)
 
 ```python
->>> print(re.search(r'colou?r', 'color').span())
+>>> re.search(r'colou?r', 'color').span()
 (0, 5)
->>> print(re.search(r'colou?r', 'colour').span())
+>>> re.search(r'colou?r', 'colour').span()
 (0, 6)
->>> print(re.search(r'colou?r', 'colouor'))
+>>> re.search(r'colou?r', 'colouor')
 None
 ```
 
@@ -344,6 +358,7 @@ The word `'good'` with 5 `o`'s:
 </span>
 
 
+
 ## {m}
 
 The word `'good'` with 5 `o`'s:
@@ -355,17 +370,18 @@ input       | pattern   | result
 'good'      | go{5}d    | <span class="fragment">✘</span>
 
 
+
 ## {m}
 ### m copies of previous RE should be matched
 
 The word `'good'` with 5 `o`'s:
 
 ```python
->>> print(re.search(r'go{5}d', 'goooood').span())
+>>> re.search(r'go{5}d', 'goooood').span()
 (0, 7)
->>> print(re.search(r'go{5}d', 'gooooood'))
+>>> re.search(r'go{5}d', 'gooooood')
 None
->>> print(re.search(r'go{5}d', 'good'))
+>>> re.search(r'go{5}d', 'good')
 None
 ```
 
@@ -380,6 +396,7 @@ The word good with 3-5 o's:
 </span>
 
 
+
 ## {m,n}
 
 The word good with 3-5 o's:
@@ -392,19 +409,20 @@ input       | pattern   | result
 'gooooood'  | go{3,5}d  | <span class="fragment">✘</span>
 
 
+
 ## {m,n}
 ### m to n repetitions of previous RE
 
 The word good with 3-5 o's:
 
 ```python
->>> print(re.search(r'go{3,5}d', 'goooood').span())
+>>> re.search(r'go{3,5}d', 'goooood').span()
 (0, 7)
->>> print(re.search(r'go{3,5}d', 'goood').span())
+>>> re.search(r'go{3,5}d', 'goood').span()
 (0, 5)
->>> print(re.search(r'go{3,5}d', 'good'))
+>>> re.search(r'go{3,5}d', 'good')
 None
->>> print(re.search(r'go{3,5}d', 'gooooood'))
+>>> re.search(r'go{3,5}d', 'gooooood')
 None
 ```
 
@@ -417,6 +435,7 @@ The string 'star\*' with the actual char `*`:
 <span class="fragment">
 `star\*`
 </span>
+
 
 
 ## '\\'
@@ -432,21 +451,22 @@ input       | pattern    | result
 'stark'     | star\\*    | <span class="fragment">✘</span>
 
 
+
 ## '\\'
 ### Escapes special char following ('*', '?', etc.)
 
 The string 'star\*' with the actual char `*`:
 
 ```python
->>> print(re.search(r'star\*', 'star*').span())
+>>> re.search(r'star\*', 'star*').span()
 (0, 5)
->>> print(re.search(r'star\*', 'star\*'))
+>>> re.search(r'star\*', 'star\*')
 None
->>> print(re.search(r'star\*', 'star'))
+>>> re.search(r'star\*', 'star')
 None
->>> print(re.search(r'star\*', 'starr'))
+>>> re.search(r'star\*', 'starr')
 None
->>> print(re.search(r'star\*', 'stark'))
+>>> re.search(r'star\*', 'stark')
 None
 ```
 
@@ -461,6 +481,7 @@ The word 'mark' with 'm' or 'M':
 </span>
 
 
+
 ## [abc]
 
 The word 'mark' with 'm' or 'M':
@@ -473,19 +494,20 @@ input       | pattern    | result
 'ark'       | [Mm]ark    | <span class="fragment">✘</span>
 
 
+
 ## [abc]
 ### 'a', 'b' or 'c'
 
 The word 'mark' with 'm' or 'M':
 
 ```python
->>> print(re.search(r'[Mm]ark', 'mark').span())
+>>> re.search(r'[Mm]ark', 'mark').span()
 (0, 4)
->>> print(re.search(r'[Mm]ark', 'Mark').span())
+>>> re.search(r'[Mm]ark', 'Mark').span()
 (0, 4)
->>> print(re.search(r'[Mm]ark', 'Dark'))
+>>> re.search(r'[Mm]ark', 'Dark')
 None
->>> print(re.search(r'[Mm]ark', 'ark'))
+>>> re.search(r'[Mm]ark', 'ark')
 None
 ```
 
@@ -498,6 +520,7 @@ Single capital letter or digit, followed by 'ark':
 <span class="fragment">
 `[A-Z0-9]ark`
 </span>
+
 
 
 ## [a-z]
@@ -513,19 +536,20 @@ input       | pattern       | result
 'ark'       | [A-Z0-9]ark   | <span class="fragment">✘</span>
 
 
+
 ## [a-z]
 ### range, a char between `a` and `z`
 
 Single capital letter or digit, followed by 'ark':
 
 ```python
->>> print(re.search(r'[A-Z0-9]ark', 'Mark').span())
+>>> re.search(r'[A-Z0-9]ark', 'Mark').span()
 (0, 4)
->>> print(re.search(r'[A-Z0-9]ark', 'Dark').span())
+>>> re.search(r'[A-Z0-9]ark', 'Dark').span()
 (0, 4)
->>> print(re.search(r'[A-Z0-9]ark', '9ark').span())
+>>> re.search(r'[A-Z0-9]ark', '9ark').span()
 (0, 4)
->>> print(re.search(r'[A-Z0-9]ark', 'ark'))
+>>> re.search(r'[A-Z0-9]ark', 'ark')
 None
 ```
 
@@ -538,6 +562,7 @@ Character different from `M` or `m` followed by 'ark':
 <span class="fragment">
 `[^Mm]ark`
 </span>
+
 
 
 ## [^abc]
@@ -554,21 +579,22 @@ input       | pattern    | result
 'ark'       | [^Mm]ark   | <span class="fragment">✘</span>
 
 
+
 ## [^abc]
 ### Characters complementing the set (all but 'a', 'b' or 'c')
 
 Character different from `M` or `m` followed by 'ark':
 
 ```python
->>> print(re.search(r'[^Mm]ark', 'Dark').span())
+>>> re.search(r'[^Mm]ark', 'Dark').span()
 (0, 4)
->>> print(re.search(r'[^Mm]ark', '9ark').span())
+>>> re.search(r'[^Mm]ark', '9ark').span()
 (0, 4)
->>> print(re.search(r'[^Mm]ark', 'Mark'))
+>>> re.search(r'[^Mm]ark', 'Mark')
 None
->>> print(re.search(r'[^Mm]ark', 'mark'))
+>>> re.search(r'[^Mm]ark', 'mark')
 None
->>> print(re.search(r'[^Mm]ark', 'ark'))
+>>> re.search(r'[^Mm]ark', 'ark')
 None
 ```
 
@@ -583,6 +609,7 @@ Either 'cat' or 'dog':
 </span>
 
 
+
 ## '|'
 
 Either 'cat' or 'dog':
@@ -594,17 +621,18 @@ input       | pattern       | result
 'banana'    | cat&#124;dog  | <span class="fragment">✘</span>
 
 
+
 ## '|'
 ### A|B - RE A or B
 
 Either 'cat' or 'dog':
 
 ```python
->>> print(re.search(r'cat|dog', 'cat').span())
+>>> re.search(r'cat|dog', 'cat').span()
 (0, 3)
->>> print(re.search(r'cat|dog', 'dog').span())
+>>> re.search(r'cat|dog', 'dog').span()
 (0, 3)
->>> print(re.search(r'cat|dog', 'banana'))
+>>> re.search(r'cat|dog', 'banana')
 None
 ```
 
@@ -624,13 +652,14 @@ Here we detect digits and non-digits:
 
 ```python
 # digits followed by non-digits
->>> print(re.search(r'[0-9]+ [^0-9]+', '357 Cat~s#').span())
+>>> re.search(r'[0-9]+ [^0-9]+', '357 Cat~s#').span()
 (0, 10)
 
 # \d - digit, \D - non-Digit
->>> print(re.search(r'\d+ \D+', '357 Cat~s#').span())
+>>> re.search(r'\d+ \D+', '357 Cat~s#').span()
 (0, 10)
 ```
+
 
 
 ## Character Groups (2)
@@ -652,6 +681,7 @@ come
 ```
 
 
+
 ## Character Groups - List
 
 Symbol  | Meaning
@@ -660,26 +690,27 @@ Symbol  | Meaning
 \D      | NOT a decimal digit
 \s      | Whitespace - [ \t\n\r\f\v] and more if unicode
 \S      | NOT whitespace
-\w      | Word character [a-zA-Z0-9_] and more if unicode
+\w      | Word character [a-zA-Z0-9\_] and more if unicode
 \W      | NOT word character
 
 
 
 ## Search Flags
-### Flags implement search options
+### Flags provide search options
 
 Ignore case:
 
 ```python
->>> print(re.search(r'cats', 'cats').span())
+>>> re.search(r'cats', 'cats').span()
 (0, 4)
->>> print(re.search(r'cats', 'CATS'))
+>>> re.search(r'cats', 'CATS')
 None
->>> print(re.search(r'cats', 'cats', re.IGNORECASE).span())
+>>> re.search(r'cats', 'cats', re.IGNORECASE).span()
 (0, 4)
->>> print(re.search(r'cats', 'CATS', re.IGNORECASE).span())
+>>> re.search(r'cats', 'CATS', re.IGNORECASE).span()
 (0, 4)
 ```
+
 
 
 ## Search Flags (2)
@@ -687,16 +718,17 @@ None
 Regular expressions can get complicated. We can space and comment them:
 
 ```python
->>> print(re.search(r'\d{3,5} \D+', '2673 bananas').span())
+>>> re.search(r'\d{3,5} \D+', '2673 bananas').span()
 (0, 12)
 
 # can also be written:
 >>> exp = r'''\d{3,5}   # number
 ...           \         # space char
 ...           \D+       # word'''
->>> print(re.search(exp, '2673 bananas', re.VERBOSE).span())
+>>> re.search(exp, '2673 bananas', re.VERBOSE).span()
 (0, 12)
 ```
+
 
 
 ## Search Flags - List
@@ -727,6 +759,7 @@ A _unit_ that appears twice separated by a single space
 </span>
 
 
+
 ## Grouping (2)
 
 Part    | Meaning
@@ -747,6 +780,7 @@ Part    | Meaning
 >>> m.group(1)
 'sweet'
 ```
+
 
 
 ## Grouping (3)
@@ -792,9 +826,9 @@ What we've been using so far
 Pattern must match from the beginning of the string
 
 ```python
->>> print(re.match(r'ba', 'banana').span())
+>>> re.match(r'ba', 'banana').span()
 (0, 2)
->>> print(re.match(r'ba', 'big banana'))
+>>> re.match(r'ba', 'big banana')
 None
 ```
 
@@ -863,8 +897,8 @@ such substitutions it did:
 
 # Compiled Patterns
 
-- Python compiled a Pattern object every time
-- If using the same pattern more than once - it's best to create the Pattern
+- Python compiles a Pattern object for every search
+- When using a pattern more than once - better create the Pattern
   ourselves
 
 ```python
@@ -887,7 +921,7 @@ and also faster
 
 
 
-## string.search() and string.find()
+## `re.search()` and `string.find()`
 
 ```python
 >>> re.search(r'small', 'a small cat with a small apetite').span()
@@ -898,7 +932,8 @@ and also faster
 ```
 
 
-## string.replace() and re.sub()
+
+## `string.replace()` and `re.sub()`
 
 ```python
 # using re.sub()
@@ -941,6 +976,7 @@ and also faster
 
 
 # Appendix
+
 
 
 ## Regex Syntax table
@@ -1005,6 +1041,7 @@ symbol         | meaning
 <!--- (?(id/name)yes-pattern|no-pattern)    Matches yes-pattern if id/name group exists, optional no-pattern otherwise-->
 
 
+
 ## Escape Sequences
 
 <table style="font-size: large; line-height: 1em;">
@@ -1038,6 +1075,7 @@ symbol         | meaning
 <!--\w       | Word character [a-zA-Z0-9_] and more if unicode-->
 <!--\W       | NOT word character-->
 <!--\Z       | End of string-->
+
 
 
 ## Flags

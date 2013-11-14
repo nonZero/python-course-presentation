@@ -78,6 +78,16 @@ a is 30
 
 
 
+## `cdll`, `windll` and `oledll`
+
+Module      | OS            | Function Export Mechanism | Default Return Type
+--          |--             |--                         |--
+cdll        | All           | Standard `cdecl`          | int
+windll      | Windows       | `stdcall` convention      | int
+oledll      | Windows       | `stdcall` convention      | HRESULT
+
+
+
 ## Calling Functions
 
 - Automatic type conversion C ⇔ Python:
@@ -100,7 +110,8 @@ double mult(double first, int second) {
 ```python
 from ctypes import cdll, c_double, c_int
 
-mult = cdll.LoadLibrary("./examplelib.so")
+c = cdll.LoadLibrary("./examplelib.so")
+mult = c.mult
 mult.argtypes = [c_double, c_int]
 mult.restype = c_double
 
@@ -147,7 +158,7 @@ c_wchar_p    |wchar_t *    |unicode
 
 ## Detecting Errors
 
-We can set a callable Python object as restype to detect errors:
+A callable Python object as restype:
 
 ```python
 def ValidHandle(value):
@@ -197,41 +208,24 @@ copy result:  ******
 
 
 
-## Using Structures (C)
-
-```c
-typedef struct {
-    int first;
-    float second;
-} ActualData;
-
-ActualData sumData(const ActualData *data, int num) {
-    ActualData result = {0, 0};
-    for (int i = 0; i < num; i++) {
-        result.first += data[i].first;
-        result.second += data[i].second;
-    }
-    return result;
-}
-```
-
-
-
-## Using Structures (Python)
+## Arrays
 
 ```python
-class ActualData(Structure):
-    _fields_ = [('first', c_int),
-                ('second', c_float)]
-
-data = (ActualData * 3)((2, 0.1), (200, 0.5), (23, 1.2))
-sum_data_func = c.sumData
-sum_data_func.restype = ActualData
+>>> from ctypes import *
+>>> arr = (c_int * 6)()
+>>> arr[0] = 123
+>>> arr[1] = 111
+>>> arr[3] = 3333
+>>> for i in range(arr._length_):
+...     print arr[i]
 ```
 ```python
->>> res = sum_data_func(data, len(data))
->>> print res.first, res.second
-225 1.80000007153
+123
+111
+0
+3333
+0
+0
 ```
 
 
@@ -276,6 +270,59 @@ c_long(99)
 # The value is also accessable this way:
 >>> pi[0]
 99
+```
+
+
+
+## Pointer Types
+
+We can define pointer types using `POINTER`:
+
+```python
+>>> from ctypes import *
+>>> PF = POINTER(c_float)
+>>> ff = PF(c_float(12.34))
+>>> ff.contents
+c_float(12.34000015258789)
+```
+
+
+
+## Using Structures (C)
+
+```c
+typedef struct {
+    int first;
+    float second;
+} ActualData;
+
+ActualData sumData(const ActualData *data, int num) {
+    ActualData result = {0, 0};
+    for (int i = 0; i < num; i++) {
+        result.first += data[i].first;
+        result.second += data[i].second;
+    }
+    return result;
+}
+```
+
+
+
+## Using Structures (Python)
+
+```python
+class ActualData(Structure):
+    _fields_ = [('first', c_int),
+                ('second', c_float)]
+
+data = (ActualData * 3)((2, 0.1), (200, 0.5), (23, 1.2))
+sum_data_func = c.sumData
+sum_data_func.restype = ActualData
+```
+```python
+>>> res = sum_data_func(data, len(data))
+>>> print res.first, res.second
+225 1.80000007153
 ```
 
 
