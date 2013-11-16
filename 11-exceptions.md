@@ -339,7 +339,6 @@ def use_result():
 ```
 ```python
 >>> use_result()
-it pays to be valid
 Traceback (most recent call last):
   File "<stdin>", line 1, in <module>
   File "<stdin>", line 6, in use_result
