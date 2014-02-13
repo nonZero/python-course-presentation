@@ -337,6 +337,26 @@ NameError: name 'bar' is not defined
 
 
 ## Variable Scope
+### Still Living inside the function
+
+```python
+name = 'Takahiro Hinata'
+
+def foo():
+    name = 'Anabel Isidoro'
+    print name
+```
+```
+>>> foo()
+Anabel Isidoro
+
+>>> print name
+Takahiro Hinata
+```
+
+
+
+## Variable Scope
 ### Defined outside the function
 #### Reading
 
@@ -355,46 +375,60 @@ Takahiro Hinata
 
 ## Variable Scope
 ### Defined outside the function
-#### Writing
+#### Reading and Then Assigning?
 
 ```python
 name = 'Takahiro Hinata'
 
 def foo():
-    name = 'Anabel Isidoro'
     print name
+    name = 'Anabel Isidoro'
 ```
 ```
 >>> foo()
-Anabel Isidoro
-
->>> print name
-Takahiro Hinata
+...
+UnboundLocalError: local variable 'name' referenced before assignment
 ```
 
 
 
 ## Variable Scope
-### Global Variable
+### Defined outside the function
+#### The 'global' Keyword
 
 ```python
 name = 'Takahiro Hinata'
 
 def foo():
     global name
-    name = 'Anabel Isidoro'
     print name
+    name = 'Anabel Isidoro'
 ```
 ```
 >>> print name
 Takahiro Hinata
 
 >>> foo()
-Anabel Isidoro
+Takahiro Hinata
 
 >>> print name
 Anabel Isidoro
+```
 
+
+
+## Variable Scope
+### The 'global' Keyword
+
+```python
+def foo():
+    global name
+    name = 'Anabel Isidoro'
+```
+```
+>>> foo()
+>>> print name
+Anabel Isidoro
 ```
 
 
